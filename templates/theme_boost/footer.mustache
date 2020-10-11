@@ -1,0 +1,72 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    Page footer.
+}}
+<div id="goto-top-link">
+    {{! go to top is sticky to footer so needs to be sibling }}
+    <a class="btn btn-dark" role="button" href="#">
+        {{#pix}} i/up, core, {{#str}} totop, theme_boost {{/str}}{{/pix}}
+    </a>
+</div>
+<footer id="page-footer" class="pt-3 text-black bg-white">
+    <div class="container">
+        <div class="container-fluid infos-footer">
+            <div class="row-fluid">
+                <div class="col-auto col-lg-2">
+                    <img class="mesri-logo img-fluid" src="{{{ config.wwwroot }}}/theme/{{ additionalinfo.themename }}/pix/mesri.png" role="presentation"
+                         alt="{{#str}}mesri, theme_ressourcesnum{{/str}}">
+                </div>
+
+                <div class="col-auto col-lg-5">
+                    <div class="container">
+                        <div class="row">
+                            {{# additionalinfo.addresses }}
+                                <div class="col">
+                                    {{< theme_ressourcesnum/footer_address }} {{/ theme_ressourcesnum/footer_address}}
+                                </div>
+                            {{/ additionalinfo.addresses }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto col-lg-5">
+                    <div class="font-weight-bold">{{#str}} sitemap, theme_ressourcesnum {{/str}}</div>
+                    <nav class="nav navbar-nav" aria-label="{{#str}}custommenu, admin{{/str}}">
+                        {{# output.mcms_menu_menu_flat }}
+                            <ul class="list-unstyled pt-3">
+                                {{> theme_boost/custom_menu_footer }}
+                            </ul>
+                        {{/ output.mcms_menu_menu_flat }}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid legal-footer p-x-0 bg-gray">
+        <div class="d-flex justify-content-center w-100">
+            {{# additionalinfo.legallinks }}
+                <div class="col col-12 col-md">
+                    <a href="{{link}}">{{label}}</a>
+                </div>
+            {{/ additionalinfo.legallinks }}
+        </div>
+    </div>
+    <div class="container-fluid legal-footer p-x-0 bg-dark text-white">
+        {{{ output.standard_footer_html }}}
+    </div>
+    {{{ output.standard_end_of_body_html }}}
+</footer>

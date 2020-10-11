@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'HKGrotesk';
+    src: url([[font:theme|HKGrotesk-Regular.eot]]);
+    src: url([[font:theme|HKGrotesk-Regular.eot]]) format('embedded-opentype'),
+        url([[font:theme|HKGrotesk-Regular.ttf]])  format('truetype'),
+        url([[font:theme|HKGrotesk-Regular.woff]]) format('woff'),
+        url([[font:theme|HKGrotesk-Regular.woff2]]) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HKGrotesk';
+    src: url([[font:theme|HKGrotesk-Bold.eot]]);
+    src: url([[font:theme|HKGrotesk-Bold.eot]]) format('embedded-opentype'),
+    url([[font:theme|HKGrotesk-Bold.ttf]])  format('truetype'),
+    url([[font:theme|HKGrotesk-Bold.woff]]) format('woff'),
+    url([[font:theme|HKGrotesk-Bold.woff2]]) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HKGrotesk';
+    src: url([[font:theme|HKGrotesk-Italic.eot]]);
+    src: url([[font:theme|HKGrotesk-Italic.eot]]) format('embedded-opentype'),
+    url([[font:theme|HKGrotesk-Italic.ttf]])  format('truetype'),
+    url([[font:theme|HKGrotesk-Italic.woff]]) format('woff'),
+    url([[font:theme|HKGrotesk-Italic.woff2]]) format('woff2');    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GandhiSans';
+    src: url([[font:theme|GandhiSans-Regular.eot]]);
+    src: url([[font:theme|GandhiSans-Regular.eot]]) format('embedded-opentype'),
+    url([[font:theme|GandhiSans-Regular.ttf]])  format('truetype'),
+    url([[font:theme|GandhiSans-Regular.woff]]) format('woff'),
+    url([[font:theme|GandhiSans-Regular.woff2]]) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GandhiSans';
+    src: url([[font:theme|GandhiSans-Bold.eot]]);
+    src: url([[font:theme|GandhiSans-Bold.eot]]) format('embedded-opentype'),
+    url([[font:theme|GandhiSans-Bold.ttf]])  format('truetype'),
+    url([[font:theme|GandhiSans-Bold.woff]]) format('woff'),
+    url([[font:theme|GandhiSans-Bold.woff2]]) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GandhiSans';
+    src: url([[font:theme|GandhiSans-Italic.eot]]);
+    src: url([[font:theme|GandhiSans-Italic.eot]]) format('embedded-opentype'),
+    url([[font:theme|GandhiSans-Italic.ttf]])  format('truetype'),
+    url([[font:theme|GandhiSans-Italic.woff]]) format('woff'),
+    url([[font:theme|GandhiSans-Italic.woff2]]) format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
