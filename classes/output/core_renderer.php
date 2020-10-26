@@ -24,7 +24,6 @@
 
 namespace theme_ressourcesnum\output;
 
-use html_writer;
 use theme_ressourcesnum\local\utils;
 
 defined('MOODLE_INTERNAL') || die;
@@ -53,23 +52,10 @@ class core_renderer extends \theme_clboost\output\core_renderer {
         global $SITE, $CFG;
         $additionalinfo = parent::get_template_additional_information();
         $sitenameval = explode(' ', trim($SITE->fullname));
-        $additionalinfo->sitenamestyled = \html_writer::tag('strong', $sitenameval[0]) . ' '.
-            \html_writer::span(implode(' ', array_slice($sitenameval,1)));
+        $additionalinfo->sitenamestyled = \html_writer::tag('strong', $sitenameval[0]) . ' ' .
+            \html_writer::span(implode(' ', array_slice($sitenameval, 1)));
         $additionalinfo->addresses = utils::convert_addresses_config();
-        $additionalinfo->legallinks = [
-            (object) [
-                'label' => get_string('mentionlegales', 'theme_ressourcesnum'),
-                'link' => $CFG->wwwroot . '/local/mcms/view.php?p=mentions-legales'
-            ],
-            (object) [
-                'label' => get_string('cookiesrgpd', 'theme_ressourcesnum'),
-                'link' => $CFG->wwwroot . '/local/mcms/view.php?p=cookies-et-donnees'
-            ],
-            (object) [
-                'label' => get_string('copyright', 'theme_ressourcesnum'),
-                'link' => ''
-            ]
-        ];
+        $additionalinfo->legallinks = utils::convert_legallinks_config();
         return $additionalinfo;
     }
 
@@ -90,6 +76,7 @@ class core_renderer extends \theme_clboost\output\core_renderer {
     }
 
     // Standard footer should be hidden in non development mode.
+
     /**
      * The standard tags (typically performance information and validation links,
      * if we are in developer debug mode) that should be output in the footer area

@@ -52,7 +52,7 @@ class utils {
     public static function convert_addresses_config() {
         $configtext = get_config('theme_ressourcesnum', 'addresses');
 
-        $lineparser = function ($setting, $index, &$currentobject) {
+        $lineparser = function($setting, $index, &$currentobject) {
             if (!empty($setting[$index])) {
                 $val = trim($setting[$index]);
                 switch ($index) {
@@ -64,6 +64,39 @@ class utils {
                         break;
                     case 2:
                         $currentobject->tel = $val;
+                        break;
+                }
+            }
+        };
+        return \theme_clboost\local\utils::convert_from_config($configtext, $lineparser);
+    }
+
+    /**
+     * Converts the addresses config string into an array of information that can be
+     * then added to the footer via the "footer_address" mustache template.
+     * Structure:
+     *     stringlabel|url
+     *
+     * Example structure:
+     *     mentionlegales|<url>
+     *
+     * Converted into: an object with title, address, tel fields.
+     *
+     * @return array
+     * @throws \dml_exception
+     */
+    public static function convert_legallinks_config() {
+        $configtext = get_config('theme_ressourcesnum', 'legallinks');
+
+        $lineparser = function($setting, $index, &$currentobject) {
+            if (!empty($setting[$index])) {
+                $val = trim($setting[$index]);
+                switch ($index) {
+                    case 0:
+                        $currentobject->label = get_string($val, 'theme_ressourcesnum');
+                        break;
+                    case 1:
+                        $currentobject->link = $val;
                         break;
                 }
             }

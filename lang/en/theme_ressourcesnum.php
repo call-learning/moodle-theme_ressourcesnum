@@ -30,6 +30,8 @@ $string['addresses_desc'] = 'Addresses for Footer.  <br/>Structure:
      <li>addresslabel|address|tel</li>
      <li>Exemple: HESAM Université|15, rue Soufflot<br>75005 Pars|01 87 39 20 20</li>
      </ul>';
+$string['legallinks'] = 'Legal Links on Footer';
+$string['legallinks_desc'] = 'Legal Links';
 $string['address'] = 'Address';
 
 $string['additionalinfo'] = 'Additional information';
@@ -51,3 +53,4 @@ $string['region-content'] = 'Content';
 
 $string['sitemap'] = 'Site Map';
 $string['tel'] = 'Telephone';
+

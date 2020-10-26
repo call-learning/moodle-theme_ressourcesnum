@@ -31,7 +31,8 @@ $string['addresses_desc'] = 'Addresses pour le pied de page.  <br/>Structure:
      <li>Exemple: HESAM Université|15, rue Soufflot<br>75005 Pars|01 87 39 20 20</li>
      </ul>';
 $string['address'] = 'Addresse';
-
+$string['legallinks'] = 'Mentions légales en bas de page';
+$string['legallinks_desc'] = 'Mentions légales';
 $string['additionalinfo'] = 'Information additionnelle';
 
 $string['nobootswatch'] = 'None';

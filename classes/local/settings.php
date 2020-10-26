@@ -50,6 +50,7 @@ class settings extends \theme_clboost\local\settings {
      * @param admin_settingpage $settings
      */
     protected static function additional_settings(admin_settingpage &$settings) {
+        global $CFG;
         // Advanced settings.
         $page = new admin_settingpage('additionalinfo', static::get_string('additionalinfo',
             'theme_ressourcesnum'));
@@ -61,6 +62,19 @@ class settings extends \theme_clboost\local\settings {
             PARAM_RAW);
         $page->add($setting);
 
+        $legallinks = [];
+        $legallinks[] = 'mentionlegales|'
+            .$CFG->wwwroot . '/admin/tool/policy/view.php?policyid=1';
+        $legallinks[] = 'cookiesrgpd|'
+            .$CFG->wwwroot . '/admin/tool/policy/view.php?policyid=1';
+        $legallinks[] = 'copyright';
+
+        $setting = new \admin_setting_configtextarea('theme_ressourcesnum/legallinks',
+            static::get_string('legallinks', 'theme_ressourcesnum'),
+            static::get_string('legallinks_desc', 'theme_ressourcesnum'),
+            join("\n", $legallinks),
+            PARAM_RAW);
+        $page->add($setting);
         $settings->add($page);
 
     }
