@@ -51,7 +51,8 @@ class settings extends \theme_clboost\local\settings {
      */
     protected static function additional_settings(admin_settingpage &$settings) {
         // Advanced settings.
-        $page = new admin_settingpage('additionalinfo', static::get_string('additionalinfo', 'theme_vetagro'));
+        $page = new admin_settingpage('additionalinfo', static::get_string('additionalinfo',
+            'theme_ressourcesnum'));
 
         $setting = new \admin_setting_configtextarea('theme_ressourcesnum/addresses',
             static::get_string('addresses', 'theme_ressourcesnum'),

@@ -1,0 +1,98 @@
+.pagelayout-frontpage {
+    #region-main {
+        border: initial;
+        padding: initial;
+    }
+}
+
+// A bit of a hack here: the definition in the core block does
+// not fit our needs, so we reset it.
+
+.pagelayout-mcmslayout, #page-site-index {
+    .block, #region-main {
+        border: none;
+        background: transparent !important;
+    }
+    .block {
+        .card-body {
+            text-align: center;
+            .card-title {
+                max-width: 50%;
+                @include media-breakpoint-down(sm) {
+                    max-width: unset;
+                }
+                font-size: xx-large;
+                color: $dark;
+                font-family: "GandhiSans";
+                &::after {
+                    content: "";
+                    width: 2rem;
+                    height: 2.5px;
+                    background-color: $primary;
+                    margin: 0.5rem auto 1em;
+                    display: block;
+                }
+            }
+            .content {
+                text-align: initial;
+            }
+        }
+        .card-text  {
+            max-width: 50%;
+            @include media-breakpoint-down(sm) {
+                max-width: unset;
+            }
+            @extend .container;
+
+
+            a {
+                text-decoration: underline;
+            }
+            h5 a {
+                @extend .btn;
+                @extend .btn-primary;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.wave-divider-wrap {
+    fill: white;
+    height: 200px;
+    width: 100%;
+}
+
+#page-site-index {
+
+    .wave-heading-box {
+        background: url([[pix:theme_ressourcesnum|bg/iceberg]]) center center no-repeat,
+        linear-gradient(111deg, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0.5) 59%);
+        background-size: cover;
+        height: 730px;
+    }
+
+    .page-header-ressourcesnum {
+        margin-left: 50%;
+        max-width: 50%;
+        color: white;
+
+        h3 {
+            font-size: xx-large;
+        }
+
+        a {
+            @extend .btn;
+            min-width: 50%;
+            margin-top: 1rem;
+            @include button-outline-variant($white);
+            border-color: $white;
+
+        }
+
+        a:first-of-type {
+            @extend .btn-primary;
+        }
+
+    }
+}

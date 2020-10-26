@@ -28,7 +28,7 @@
         <div class="container-fluid infos-footer">
             <div class="row-fluid">
                 <div class="col-auto col-lg-2">
-                    <img class="mesri-logo img-fluid" src="{{{ config.wwwroot }}}/theme/{{ additionalinfo.themename }}/pix/mesri.png" role="presentation"
+                    <img class="mesri-logo img-fluid py-0" src="{{{ config.wwwroot }}}/theme/{{ additionalinfo.themename }}/pix/mesri.png" role="presentation"
                          alt="{{#str}}mesri, theme_ressourcesnum{{/str}}">
                 </div>
 
@@ -57,9 +57,9 @@
         </div>
     </div>
     <div class="container-fluid legal-footer p-x-0 bg-gray">
-        <div class="d-flex justify-content-center w-100">
+        <div class="d-flex justify-content-center w-100 mx-auto">
             {{# additionalinfo.legallinks }}
-                <div class="col col-12 col-md">
+                <div class="mx-auto">
                     <a href="{{link}}">{{label}}</a>
                 </div>
             {{/ additionalinfo.legallinks }}

@@ -1,0 +1,40 @@
+// MCMS Pages
+.mcms-header-container {
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 30em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    h3 {
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        align-self: center;
+        font-size: xx-large;
+    }
+
+    a {
+        @extend .btn;
+        margin-top: 1rem;
+        @include button-outline-variant($white);
+        border-color: $white;
+
+    }
+
+    a:first-of-type {
+        @include button-variant($white, $white);;
+    }
+}
+
+// Block decoration
+
+.pagelayout-mcmslayout {
+    .block, #region-main {
+        border: none;
+        background: transparent !important;
+    }
+}
