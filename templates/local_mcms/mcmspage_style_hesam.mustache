@@ -17,9 +17,9 @@
 {{!
     Default page header.
 }}
-<div class="mcms-header-container w-100 text-white page-style-default"
+<div class="mcms-header-container w-100 text-white page-style-default z-index-0"
     {{#imagesurl}} style="background: linear-gradient(102deg, #d20025de 40%, #f1657dde 97%),  url('{{.}}') center center; background-size: cover" {{/imagesurl}}>
-    <div class="container">
+    <div class="container z-index-1">
             <h3 class="">{{title}}</h3>
             {{{descriptionhtml}}}
     </div>
