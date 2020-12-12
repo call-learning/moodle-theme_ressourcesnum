@@ -53,17 +53,16 @@ class utils {
         $configtext = get_config('theme_ressourcesnum', 'addresses');
 
         $lineparser = function($setting, $index, &$currentobject) {
-            if (!empty($setting[$index])) {
-                $val = trim($setting[$index]);
+            if (!empty($setting)) {
                 switch ($index) {
                     case 0:
-                        $currentobject->title = $val;
+                        $currentobject->title = $setting;
                         break;
                     case 1:
-                        $currentobject->address = $val;
+                        $currentobject->address = $setting;
                         break;
                     case 2:
-                        $currentobject->tel = $val;
+                        $currentobject->tel = $setting;
                         break;
                 }
             }
@@ -89,14 +88,13 @@ class utils {
         $configtext = get_config('theme_ressourcesnum', 'legallinks');
 
         $lineparser = function($setting, $index, &$currentobject) {
-            if (!empty($setting[$index])) {
-                $val = trim($setting[$index]);
+            if (!empty($setting)) {
                 switch ($index) {
                     case 0:
-                        $currentobject->label = get_string($val, 'theme_ressourcesnum');
+                        $currentobject->label = get_string($setting, 'theme_ressourcesnum');
                         break;
                     case 1:
-                        $currentobject->link = $val;
+                        $currentobject->link = $setting;
                         break;
                 }
             }
