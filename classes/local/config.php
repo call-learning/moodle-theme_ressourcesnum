@@ -24,6 +24,8 @@
 
 namespace theme_ressourcesnum\local;
 
+use local_mcms\page_utils;
+
 defined('MOODLE_INTERNAL') || die;
 
 /**
@@ -36,7 +38,7 @@ defined('MOODLE_INTERNAL') || die;
 class config extends \theme_clboost\local\config {
     public static function get_layouts() {
         $layouts = parent::get_layouts();
-        $layouts[\local_mcms\page_utils::PAGE_LAYOUT_NAME] = array(
+        $layouts[page_utils::PAGE_LAYOUT_NAME] = array(
             'file' => 'mcmspage.php',
             'regions' => array('content'),
             'defaultregion' => 'content',

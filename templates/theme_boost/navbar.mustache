@@ -21,6 +21,7 @@
 }}
 <nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="{{#str}}sitemenubar, admin{{/str}}">
     <div class="nav-left-region">
+    {{# additionalinfo.hasnavdrawer }}
         {{# additionalinfo.isloggedin }}
             <div data-region="drawer-toggle" class="d-block">
                 <button
@@ -33,6 +34,7 @@
                 </button>
             </div>
         {{/ additionalinfo.isloggedin }}
+    {{/ additionalinfo.hasnavdrawer }}
     </div>
     <div class="d-flex flex-row flex-grow-1 nav-main-content">
         <a href="{{{ config.wwwroot }}}" class="navbar-brand aabtn {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}">
