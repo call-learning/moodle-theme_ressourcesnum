@@ -52,5 +52,18 @@ $string['region-side-pre'] = 'Right';
 $string['region-content'] = 'Content';
 
 $string['sitemap'] = 'Site Map';
+
+$string['slider'] = 'Frontpage Slider';
+$string['slidernumslides'] = 'Numbers of slides';
+$string['slidernumslides_desc'] = 'Numbers of slides';
+$string['sliderimage'] = 'Slider Image';
+$string['sliderimage_desc'] = 'Slider Image that is in the background of the front page';
+$string['sliderimageoverlaycolor'] = 'Overlay color on Slide image';
+$string['sliderimageoverlaycolor_desc'] = 'Overlay color on Slide image';
+$string['slidercontentright'] = 'Push content to right';
+$string['slidercontentright_desc'] = 'Push content to right';
+$string['slidertext'] = 'Slider Text';
+$string['slidertext_desc'] = 'Slider Text that is presented to the user';
+
 $string['tel'] = 'Telephone';
 

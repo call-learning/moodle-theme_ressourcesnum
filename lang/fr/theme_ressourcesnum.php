@@ -51,4 +51,17 @@ $string['region-side-pre'] = 'Droite';
 $string['region-content'] = 'Content';
 
 $string['sitemap'] = 'Plan du site';
+
+$string['slider'] = 'Carousel page de garde';
+$string['slidernumslides'] = 'Nombre de slides';
+$string['slidernumslides_desc'] = 'Nombre de slides';
+$string['sliderimage'] = 'Image du slide';
+$string['sliderimage_desc'] = 'Slider Image that is in the background of the front page';
+$string['sliderimageoverlaycolor'] = 'Overlay sur l\'image du slide';
+$string['sliderimageoverlaycolor_desc'] = 'Couleur d\'overlay sur l\'image du slide';
+$string['slidercontentright'] = 'Pousser le contenu vers la droite';
+$string['slidercontentright_desc'] = 'Pousser le contenu vers la droite, permet de mieux voir le texte';
+$string['slidertext'] = 'Texte du slide';
+$string['slidertext_desc'] = 'Slider Text that is presented to the user';
+
 $string['tel'] = 'Téléphone';

@@ -30,6 +30,10 @@ $templatecontext = \theme_clboost\local\utils::prepare_standard_page($OUTPUT, $P
 // It would usually display the course list, news, and so on (see @core_renderer::frontpage).
 $CFG->frontpage = '';
 $CFG->frontpageloggedin = '';
-$templatecontext['pageheader'] = format_text($SITE->summary, FORMAT_HTML);
+// TODO : get all slider content in an array, then use a template to integrate
+$templatecontext['pagecontent'] = format_text($SITE->summary, FORMAT_HTML);
 
+// Prepare caroussel.
+$carouselrenderable = new \theme_ressourcesnum\output\carousel_renderable($PAGE->theme->name);
+$templatecontext['carousel'] = $carouselrenderable->export_for_template($OUTPUT);
 echo $OUTPUT->render_from_template('theme_clboost/frontpage', $templatecontext);

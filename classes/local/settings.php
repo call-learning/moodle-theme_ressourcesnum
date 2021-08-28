@@ -76,7 +76,54 @@ class settings extends \theme_clboost\local\settings {
             PARAM_RAW);
         $page->add($setting);
         $settings->add($page);
+        // Advanced settings.
+        $page = new admin_settingpage('slider', static::get_string('slider',
+            'theme_ressourcesnum'));
 
+
+        $choices = array_combine(range(1, self::MAX_SLIDER_SLIDES),
+            range(1, self::MAX_SLIDER_SLIDES));
+        $setting = new \admin_setting_configselect(
+            'theme_ressourcesnum/slidernumslides',
+            static::get_string('slidernumslides', 'theme_ressourcesnum'),
+            static::get_string('slidernumslides_desc', 'theme_ressourcesnum'),
+            1,
+            $choices
+        );
+        $page->add($setting);
+        $currentnumslide = get_config('theme_ressourcesnum', 'slidernumslides');
+        foreach(range(1,$currentnumslide ?? 1) as $slidenum) {
+            $setting = new \admin_setting_confightmleditor('theme_ressourcesnum/slidertext'.$slidenum,
+                static::get_string('slidertext', 'theme_ressourcesnum', $slidenum),
+                static::get_string('slidertext_desc', 'theme_ressourcesnum', $slidenum),
+                '',
+                PARAM_RAW);
+            $setting->set_updatedcallback('theme_reset_all_caches');
+            $page->add($setting);
+            $setting = new admin_setting_configstoredfile('theme_ressourcesnum/sliderimage'.$slidenum,
+                static::get_string('sliderimage', 'theme_ressourcesnum', $slidenum),
+                static::get_string('sliderimage_desc', 'theme_ressourcesnum', $slidenum),
+                utils::SLIDER_FILEAREA,
+                $slidenum
+            );
+            $setting->set_updatedcallback('theme_reset_all_caches');
+            $page->add($setting);
+            $setting = new \admin_setting_configcheckbox('theme_ressourcesnum/slidercontentright'.$slidenum,
+                static::get_string('slidercontentright', 'theme_ressourcesnum', $slidenum),
+                static::get_string('slidercontentright_desc', 'theme_ressourcesnum', $slidenum),
+                false
+            );
+            $setting->set_updatedcallback('theme_reset_all_caches');
+            $page->add($setting);
+            $setting = new admin_setting_configcolourpicker('theme_ressourcesnum/overlaycolor'.$slidenum,
+                static::get_string('sliderimageoverlaycolor', 'theme_ressourcesnum', $slidenum),
+                static::get_string('sliderimageoverlaycolor_desc', 'theme_ressourcesnum', $slidenum),
+                "#fff");
+            $setting->set_updatedcallback('theme_reset_all_caches');
+            $page->add($setting);
+        }
+        $settings->add($page);
     }
 
+    const MAX_SLIDER_SLIDES = 10;
 }

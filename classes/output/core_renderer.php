@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Presets management
+ * Core renderer
  *
- * @package   theme_clboost
+ * @package   theme_resourcenum
  * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

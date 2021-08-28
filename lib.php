@@ -22,6 +22,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use theme_ressourcesnum\local\utils;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -38,5 +40,29 @@ defined('MOODLE_INTERNAL') || die();
  * @throws coding_exception
  */
 function theme_ressourcesnum_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    return theme_clboost\local\utils::generic_pluginfile('ressourcesnum', $course, $cm, $context, $filearea, $args, $forcedownload, $options);
+    // Specific use case here: we need to have an itemid for the settings and Moodle is usually
+    // using this as a revision number, so we have to come up with a specific way to send the file here.
+    if ($filearea == utils::SLIDER_FILEAREA) {
+        $themename = 'ressourcesnum';
+        if (!array_key_exists('cacheability', $options)) {
+            $options['cacheability'] = 'public';
+        }
+
+        $syscontext = context_system::instance();
+        $component = 'theme_'.$themename;
+        $lifetime = 60*60*24*60;
+        $fs = get_file_storage();
+        $itemid = array_shift($args);
+        $relativepath = implode('/', $args);
+        $fullpath = "/{$syscontext->id}/{$component}/{$filearea}/$itemid/{$relativepath}";
+        $fullpath = rtrim($fullpath, '/');
+        if ($file = $fs->get_file_by_hash(sha1($fullpath))) {
+            send_stored_file($file, $lifetime, 0, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
+    } else {
+            return theme_clboost\local\utils::generic_pluginfile('ressourcesnum', $course, $cm, $context, $filearea, $args, $forcedownload, $options);
+    }
+
 }

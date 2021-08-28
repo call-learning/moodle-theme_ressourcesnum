@@ -24,6 +24,9 @@
 
 namespace theme_ressourcesnum\local;
 
+use context_system;
+use moodle_url;
+
 defined('MOODLE_INTERNAL') || die;
 
 /**
@@ -100,5 +103,46 @@ class utils {
             }
         };
         return \theme_clboost\local\utils::convert_from_config($configtext, $lineparser);
+    }
+
+    const SLIDER_FILEAREA = 'sliderimage';
+
+    /**
+     * Get slider images url
+     *
+     * @param string $themename
+     * @return array
+     */
+    public static function get_slider_images_url(string $themename) {
+        $currentnumslide = get_config('theme_ressourcesnum', 'slidernumslides');
+        $fs = get_file_storage();
+        $syscontextid = context_system::instance()->id;
+        $sliderimageurls = [];
+        foreach (range(1, $currentnumslide ?? 1) as $slidenum) {
+            $filepath = get_config('theme_ressourcesnum', 'sliderimage'.$slidenum);
+            $allfiles = $fs->get_area_files($syscontextid,
+                'theme_' . $themename,
+                'sliderimage',
+                $slidenum
+            );
+            if (empty($allfiles)) {
+                $sliderimageurls[$slidenum] = new moodle_url("/theme/{$themename}/pix/bg/slider1.jpg");
+            } else {
+                foreach ($allfiles as $file) {
+                    if ($file->is_valid_image()) {
+                        break;
+                    }
+                }
+                $sliderimageurls[$slidenum] = moodle_url::make_pluginfile_url(
+                    $syscontextid,
+                    'theme_' . $themename,
+                    self::SLIDER_FILEAREA,
+                    $slidenum,
+                    $file->get_filepath(),
+                    $file->get_filename()
+                );
+            }
+        }
+        return $sliderimageurls;
     }
 }
