@@ -30,7 +30,6 @@ $templatecontext = \theme_clboost\local\utils::prepare_standard_page($OUTPUT, $P
 // It would usually display the course list, news, and so on (see @core_renderer::frontpage).
 $CFG->frontpage = '';
 $CFG->frontpageloggedin = '';
-// TODO : get all slider content in an array, then use a template to integrate
 $templatecontext['pagecontent'] = format_text($SITE->summary, FORMAT_HTML);
 
 // Prepare caroussel.

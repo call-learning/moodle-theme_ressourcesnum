@@ -67,29 +67,7 @@
             <div id="region-main-box" class="col-12 p-x-0">
                 <div class="container-fluid fp-header wave-heading-box position-relative p-x-0">
                     <div class="page-header-ressourcesnum h-100">
-                        <div class="glide h-100">
-                            <div class="glide__track h-100" data-glide-el="track">
-                                <ul class="glide__slides h-100">
-                                    {{#carousel}}
-                                        <li class="glide__slide">
-                                            <div style="background-image: linear-gradient(111deg, rgba(255, 255, 255, 0) 26%, {{destcolor}} 59%), url({{imageurl}});"
-                                                 class="slider-bg-image h-100">
-                                                <div class="container">
-                                                    <div class="slide-content row {{#slidercontentright}} justify-content-end {{/slidercontentright}}">
-                                                        <div class="text-white col col-md-6 p-3 p-md-5">{{{text}}}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    {{/carousel}}
-                                </ul>
-                            </div>
-                            <div class="glide__bullets" data-glide-el="controls[nav]">
-                                {{#carousel}}
-                                    <button class="glide__bullet" data-glide-dir="={{index}}"></button>
-                                {{/carousel}}
-                            </div>
-                        </div>
+                         {{> theme_ressourcesnum/caroussel}}
                     </div>
                     {{> theme_ressourcesnum/waveheading}}
                 </div>
@@ -123,13 +101,3 @@
 </body>
 </html>
 {{> theme_clboost/twostatedrawer }}
-
-{{#js}}
-    require(['theme_ressourcesnum/glide'], function(Glide) {
-    let glide = new Glide('.page-header-ressourcesnum .glide', {
-    //        type: 'carousel',
-    autoplay: false
-    });
-    glide.mount();
-    });
-{{/js}}

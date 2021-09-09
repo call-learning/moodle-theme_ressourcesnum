@@ -1,0 +1,65 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_resourcesnum/caroussel.mustache
+
+    Caroussel with overlay color and image.
+
+    Example context (json):
+    {
+        "destcolor": "#FFEEFF",
+        "imageurl": "http://xxx.yy/image.png",
+        "slidercontentright": "true",
+        "text": "ABCD <span> ABCD </span>"
+    }
+}}
+<div class="glide h-100">
+    <div class="glide__track h-100" data-glide-el="track">
+        <ul class="glide__slides h-100">
+            {{#carousel}}
+                <li class="glide__slide">
+                    <div style="background-image: linear-gradient(111deg, rgba(255, 255, 255, 0) 26%, {{destcolor}} 59%), url({{imageurl}});"
+                         class="slider-bg-image h-100">
+                        <div class="container">
+                            <div class="slide-content row {{#slidercontentright}} justify-content-end {{/slidercontentright}}">
+                                <div class="text-white col col-md-6 p-3 p-md-5">{{{text}}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {{/carousel}}
+        </ul>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#60;</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#62;</button>
+    </div>
+    <div class="glide__bullets" data-glide-el="controls[nav]">
+        {{#carousel}}
+            <button class="glide__bullet" data-glide-dir="={{index}}"></button>
+        {{/carousel}}
+    </div>
+</div>
+{{#js}}
+    require(['theme_ressourcesnum/glide'], function(Glide) {
+        let glide = new Glide('.page-header-ressourcesnum .glide', {
+        //        type: 'carousel',
+        autoplay: false
+        });
+        glide.mount();
+    });
+{{/js}}

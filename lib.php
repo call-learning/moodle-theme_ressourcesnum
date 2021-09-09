@@ -49,8 +49,8 @@ function theme_ressourcesnum_pluginfile($course, $cm, $context, $filearea, $args
         }
 
         $syscontext = context_system::instance();
-        $component = 'theme_'.$themename;
-        $lifetime = 60*60*24*60;
+        $component = 'theme_' . $themename;
+        $lifetime = 60 * 60 * 24 * 60;
         $fs = get_file_storage();
         $itemid = array_shift($args);
         $relativepath = implode('/', $args);
@@ -62,7 +62,8 @@ function theme_ressourcesnum_pluginfile($course, $cm, $context, $filearea, $args
             send_file_not_found();
         }
     } else {
-            return theme_clboost\local\utils::generic_pluginfile('ressourcesnum', $course, $cm, $context, $filearea, $args, $forcedownload, $options);
+        return theme_clboost\local\utils::generic_pluginfile('ressourcesnum', $course, $cm, $context, $filearea, $args,
+            $forcedownload, $options);
     }
 
 }

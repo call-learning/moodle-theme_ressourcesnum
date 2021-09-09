@@ -15,35 +15,28 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * All constant in one place
+ * Theme upgrade - Upgrade plugin tasks
  *
  * @package   theme_ressourcesnum
- * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
+ * @copyright 2021 - CALL Learning - Laurent David <laurent@call-learning.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-namespace theme_ressourcesnum\local;
-
-use local_mcms\page_utils;
-
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
 /**
- * Theme constants. In one place.
+ * Upgrade steps for this plugin
  *
- * @package   theme_ressourcesnum
- * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @param int $oldversion the version we are upgrading from
+ * @return void
+ * @throws ddl_exception
+ * @throws ddl_table_missing_exception
+ * @throws downgrade_exception
+ * @throws upgrade_exception
  */
-class config extends \theme_clboost\local\config {
-    public static function get_layouts() {
-        $layouts = parent::get_layouts();
-        $layouts[page_utils::PAGE_LAYOUT_NAME] = array(
-            'file' => 'mcmspage.php',
-            'regions' => array('content'),
-            'defaultregion' => 'content',
-        );
-        return $layouts;
-    }
+function xmldb_theme_ressourcesnum_upgrade($oldversion) {
+    if ($oldversion < 2021090901) {
 
+
+        upgrade_plugin_savepoint(true, 2021090901, 'theme', 'ressourcesnum');
+    }
 }

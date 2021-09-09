@@ -26,10 +26,7 @@ namespace theme_ressourcesnum\local;
 
 use admin_setting_configcolourpicker;
 use admin_setting_configstoredfile;
-use admin_setting_configtext;
-use admin_setting_scsscode;
 use admin_settingpage;
-use theme_boost_admin_settingspage_tabs;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -64,9 +61,9 @@ class settings extends \theme_clboost\local\settings {
 
         $legallinks = [];
         $legallinks[] = 'mentionlegales|'
-            .$CFG->wwwroot . '/admin/tool/policy/view.php?policyid=1';
+            . $CFG->wwwroot . '/admin/tool/policy/view.php?policyid=1';
         $legallinks[] = 'cookiesrgpd|'
-            .$CFG->wwwroot . '/admin/tool/policy/view.php?policyid=1';
+            . $CFG->wwwroot . '/admin/tool/policy/view.php?policyid=1';
         $legallinks[] = 'copyright';
 
         $setting = new \admin_setting_configtextarea('theme_ressourcesnum/legallinks',
@@ -80,7 +77,6 @@ class settings extends \theme_clboost\local\settings {
         $page = new admin_settingpage('slider', static::get_string('slider',
             'theme_ressourcesnum'));
 
-
         $choices = array_combine(range(1, self::MAX_SLIDER_SLIDES),
             range(1, self::MAX_SLIDER_SLIDES));
         $setting = new \admin_setting_configselect(
@@ -92,15 +88,15 @@ class settings extends \theme_clboost\local\settings {
         );
         $page->add($setting);
         $currentnumslide = get_config('theme_ressourcesnum', 'slidernumslides');
-        foreach(range(1,$currentnumslide ?? 1) as $slidenum) {
-            $setting = new \admin_setting_confightmleditor('theme_ressourcesnum/slidertext'.$slidenum,
+        foreach (range(1, $currentnumslide ?? 1) as $slidenum) {
+            $setting = new \admin_setting_confightmleditor('theme_ressourcesnum/slidertext' . $slidenum,
                 static::get_string('slidertext', 'theme_ressourcesnum', $slidenum),
                 static::get_string('slidertext_desc', 'theme_ressourcesnum', $slidenum),
                 '',
                 PARAM_RAW);
             $setting->set_updatedcallback('theme_reset_all_caches');
             $page->add($setting);
-            $setting = new admin_setting_configstoredfile('theme_ressourcesnum/sliderimage'.$slidenum,
+            $setting = new admin_setting_configstoredfile('theme_ressourcesnum/sliderimage' . $slidenum,
                 static::get_string('sliderimage', 'theme_ressourcesnum', $slidenum),
                 static::get_string('sliderimage_desc', 'theme_ressourcesnum', $slidenum),
                 utils::SLIDER_FILEAREA,
@@ -108,14 +104,14 @@ class settings extends \theme_clboost\local\settings {
             );
             $setting->set_updatedcallback('theme_reset_all_caches');
             $page->add($setting);
-            $setting = new \admin_setting_configcheckbox('theme_ressourcesnum/slidercontentright'.$slidenum,
+            $setting = new \admin_setting_configcheckbox('theme_ressourcesnum/slidercontentright' . $slidenum,
                 static::get_string('slidercontentright', 'theme_ressourcesnum', $slidenum),
                 static::get_string('slidercontentright_desc', 'theme_ressourcesnum', $slidenum),
                 false
             );
             $setting->set_updatedcallback('theme_reset_all_caches');
             $page->add($setting);
-            $setting = new admin_setting_configcolourpicker('theme_ressourcesnum/overlaycolor'.$slidenum,
+            $setting = new admin_setting_configcolourpicker('theme_ressourcesnum/overlaycolor' . $slidenum,
                 static::get_string('sliderimageoverlaycolor', 'theme_ressourcesnum', $slidenum),
                 static::get_string('sliderimageoverlaycolor_desc', 'theme_ressourcesnum', $slidenum),
                 "#fff");

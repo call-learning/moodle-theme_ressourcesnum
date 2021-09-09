@@ -82,3 +82,44 @@ $nav-drawer-width: 285px;
 $drawer-toggle-width: 50px;
 $navbar-height: 93px;
 
+// Mixins
+
+@mixin page-standard-style() {
+    font-family: $font-family-sans-serif;
+    hr {
+        width: 2rem;
+        border-top: 2.5px solid $primary;
+    }
+    h3 {
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        text-align: left;
+        font-size: xx-large;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+    }
+}
+
+@mixin button-heading-style() {
+    a {
+        @extend .btn;
+        @include button-variant($primary, $white);
+        text-align: center;
+        margin-top: 1rem;
+    }
+    a:first-of-type {
+        @include button-variant($white, $white);
+    }
+}
+
+@mixin button-content-style() {
+    a {
+        @extend .btn;
+        @include button-outline-variant($primary);
+        text-align: center;
+        margin-top: 1rem;
+    }
+    a.highlight {
+        @include button-variant($primary, $primary);
+    }
+}
