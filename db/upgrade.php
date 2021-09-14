@@ -37,4 +37,8 @@ function xmldb_theme_ressourcesnum_upgrade($oldversion) {
         setup::install_update();
         upgrade_plugin_savepoint(true, 2021091401, 'theme', 'ressourcesnum');
     }
+    if ($oldversion < 2021091402) {
+        setup::install_update();
+        upgrade_plugin_savepoint(true, 2021091402, 'theme', 'ressourcesnum');
+    }
 }

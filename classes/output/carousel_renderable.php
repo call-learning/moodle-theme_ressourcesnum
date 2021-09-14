@@ -62,7 +62,7 @@ class carousel_renderable implements renderable, templatable {
             $item = new stdClass();
             $item->imageurl = $slidersimageurl[$slidenum];
             $item->text = get_config('theme_ressourcesnum', 'slidertext' . $slidenum);
-            $item->overlaycolor = get_config('theme_ressourcesnum', 'sliderimageoverlay' . $slidenum);
+            $item->overlaycolor = get_config('theme_ressourcesnum', 'sliderimageoverlaycolor' . $slidenum);
             $item->slidercontentright = get_config('theme_ressourcesnum', 'slidercontentright' . $slidenum);
             $color = get_config('theme_ressourcesnum', 'sliderimageoverlaycolor' . $slidenum);
             if (empty($color)) {

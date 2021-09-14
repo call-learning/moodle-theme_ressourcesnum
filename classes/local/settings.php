@@ -111,7 +111,7 @@ class settings extends \theme_clboost\local\settings {
             );
             $setting->set_updatedcallback('theme_reset_all_caches');
             $page->add($setting);
-            $setting = new admin_setting_configcolourpicker('theme_ressourcesnum/overlaycolor' . $slidenum,
+            $setting = new admin_setting_configcolourpicker('theme_ressourcesnum/sliderimageoverlaycolor' . $slidenum,
                 static::get_string('sliderimageoverlaycolor', 'theme_ressourcesnum', $slidenum),
                 static::get_string('sliderimageoverlaycolor_desc', 'theme_ressourcesnum', $slidenum),
                 "#fff");

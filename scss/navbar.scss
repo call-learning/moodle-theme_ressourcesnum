@@ -60,12 +60,16 @@
 
 .navbar {
     box-shadow: none;
-
     a {
         font-family: $headings-font-family;
         font-weight: bold;
-        font-size: x-large;
-        font-variant: all-petite-caps;
+        font-variant: all-small-caps;
+        font-size: large;
     }
-
+    a.nav-item {
+        font-size: x-large;
+    }
+    a.dropdown-toggle {
+        font-size: x-large;
+    }
 }

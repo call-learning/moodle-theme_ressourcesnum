@@ -22,8 +22,7 @@
  * @copyright 2021 - CALL Learning - Laurent David <laurent@call-learning.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-use theme_ressourcesnum\setup;
+use theme_ressourcesnum\task\setup_task;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -31,5 +30,9 @@ defined('MOODLE_INTERNAL') || die();
  * Theme install
  */
 function xmldb_theme_ressourcesnum_install() {
-    setup::install_update();
+    // The theme installation is ran before local install.
+    // So table "local_mcms_page" does not exist before we setup.
+    $setuptask = new setup_task();
+    // Queue it.
+    \core\task\manager::queue_adhoc_task($setuptask);
 }

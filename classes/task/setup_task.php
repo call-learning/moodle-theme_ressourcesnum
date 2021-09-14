@@ -14,23 +14,25 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+namespace theme_ressourcesnum\task;
+
+use theme_ressourcesnum\setup;
+
+defined('MOODLE_INTERNAL') || die();
 /**
- * Theme plugin version definition.
+ * Class setup task
+ *
+ * Utility setup class, ran after install.
  *
  * @package   theme_ressourcesnum
  * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die;
-
-$plugin->version   = 2021091402; /* This is the version number to increment when changes needing an update are made */
-$plugin->requires  = 2019111800;
-$plugin->release   = '0.1.0';
-$plugin->maturity  = MATURITY_ALPHA;
-$plugin->component = 'theme_ressourcesnum';
-$plugin->dependencies = [
-    'theme_boost' => ANY_VERSION,
-    'theme_clboost' => '2020092300',
-    'local_mcms' => '2021090900'
-];
+class setup_task extends \core\task\adhoc_task {
+    /**
+     * Execute install process.
+     */
+    public function execute() {
+        setup::install_update();
+    }
+}

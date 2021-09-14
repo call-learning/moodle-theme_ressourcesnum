@@ -127,7 +127,6 @@ class setup {
   valeur vos compétences transverses.<br></p><p dir="ltr" style="text-align:left;">',
             'descriptionformat' => '1',
             'idnumber' => 'vos-forces-et-faiblesses',
-            'parent' => '0',
             'ctalink' => '',
             'parentmenu' => 'top',
             'menusortorder' => '2',
@@ -207,7 +206,6 @@ class setup {
             'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout&nbsp; pour son avenir</h3><br>',
             'descriptionformat' => '1',
             'idnumber' => 'testez-vous',
-            'parent' => '0',
             'ctalink' => '',
             'style' => 'hesam',
             'parentmenu' => 'top',
@@ -345,7 +343,15 @@ class setup {
             'timezone' => 'Europe/Paris',
             'block_html_allowcssclasses' => true,
             'defaulthomepage' => HOMEPAGE_MY,
-            'summary' => '<h3>Pourquoi des ressources en ligne ?</h3>
+            'frontpageloggedin' => '',
+            'frontpage' => ''
+        ]
+    ];
+
+    /**
+     * Front page summary
+     */
+    const FRONT_PAGE_SUMMARY = '<h3>Pourquoi des ressources en ligne ?</h3>
 <p>HESAM Université vous accompagne tout au long de votre cursus en vous proposant des ressources pédagogiques accessibles
  à tout moment. Ces ressources vous permettront de compléter votre formation à votre rythme et selon vos besoins.&nbsp;</p>
 <hr>
@@ -388,9 +394,7 @@ class setup {
 <p style="text-align: center;"><a href="http://soka-hesam.local/">Test sur les compétences transversales</a></p>
 <p style="text-align: center;"><a href="http://soka-hesam.local/">Test sur les compétences&nbsp;informationnelles</a><br></p>
 <p><br></p><br>
-<p></p>'
-        ]
-    ];
+<p></p>';
 
     /**
      * Frontpage slider
@@ -403,7 +407,7 @@ class setup {
   et de faire reconnaitre vos acquis par le biais
     de badges numériques.<br></p>
 <p dir="ltr" style="text-align: left;"><a href="/">En savoir plus</a></p>',
-            'overlaycolor' => '#fff',
+            'imageoverlaycolor' => '#fff',
             'image' => '/theme/ressourcesnum/pix/slider/slider1.jpg',
         ),
         array(
@@ -411,7 +415,7 @@ class setup {
 <p dir="ltr" style="text-align: left;">Découvrez votre face cachée grâce au test Soft Skills proposé par HESAM Université.<br></p>
 <a href="/">Découvrez-vous !</a><br>
 <a href="/">En savoir plus</a><br>',
-            'overlaycolor' => '#000',
+            'imageoverlaycolor' => '#000',
             'slidercontentright' => true,
             'image' => '/theme/ressourcesnum/pix/slider/slider2.jpg',
         ),
@@ -421,7 +425,7 @@ class setup {
  aux étudiants Bac+1.<br></p>
 <a href="/">Testez vos compétences transverses</a><br>
 <a href="/">Testez vos compétences informationelles</a><br>',
-            'overlaycolor' => '#fff',
+            'imageoverlaycolor' => '#fff',
             'image' => '/theme/ressourcesnum/pix/slider/slider3.jpg',
         ),
         array(
@@ -430,7 +434,7 @@ class setup {
  dédiés aux étudiants Bac+3.<br></p>
 <a href="/">Testez vos compétences transverses</a><br>
 <a href="/">Testez vos compétences informationelles</a><br>',
-            'overlaycolor' => '#000223',
+            'imageoverlaycolor' => '#000223',
             'slidercontentright' => true,
             'image' => '/theme/ressourcesnum/pix/slider/slider4.jpg',
         ),
@@ -442,6 +446,8 @@ class setup {
     public static function install_update() {
 
         static::setup_config_values();
+
+        static::setup_frontpage();
 
         static::setup_slider();
 
@@ -491,8 +497,7 @@ class setup {
             if (!empty($mcmspage['image'])) {
                 unset($mcmspage['image']);
             }
-
-            if (!is_int($mcmspage['parent'])) {
+            if (!empty($mcmspage['parent']) && !is_int($mcmspage['parent'])) {
                 global $DB;
                 $parentpage = page::get_record(array('idnumber' => $mcmspage['parent']));
                 $mcmspage['parent'] = empty($parentpage) ? 0 : $parentpage->get('id');
@@ -540,22 +545,30 @@ class setup {
      * Setup the frontpage slider
      */
     public static function setup_slider() {
-        global $CFG;
+        global $CFG, $SITE;
         set_config('slidernumslides', count(self::FRONT_PAGE_SLIDER), 'theme_ressourcesnum');
-        $frontpagecontext = \context_course::instance(SITEID);
+        $frontpagecontext =  context_system::instance();
         $fs = get_file_storage();
         foreach (self::FRONT_PAGE_SLIDER as $index => $slider) {
             $realindex = $index + 1;
             set_config('slidertext' . $realindex, $slider['text'], 'theme_ressourcesnum');
             set_config('slidercontentright' . $realindex, $slider['slidercontentright'] ?? false, 'theme_ressourcesnum');
-            set_config('sliderimageoverlaycolor' . $realindex, $slider['overlaycolor'], 'theme_ressourcesnum');
-            $filename = basename($slider['image']);
+            set_config('sliderimageoverlaycolor' . $realindex, $slider['imageoverlaycolor'], 'theme_ressourcesnum');
             // Delete all test files.
 
-            $fs->delete_area_files($frontpagecontext->id, 'theme_ressourcesnum', utils::SLIDER_FILEAREA, $index);
-            setup_utils::upload_file($frontpagecontext->id, 'theme_ressourcesnum', utils::SLIDER_FILEAREA, $index,
+            $fs->delete_area_files($frontpagecontext->id, 'theme_ressourcesnum', utils::SLIDER_FILEAREA, $realindex);
+            setup_utils::upload_file($frontpagecontext->id, 'theme_ressourcesnum', utils::SLIDER_FILEAREA, $realindex,
                 $CFG->dirroot . dirname($slider['image']), basename($slider['image']));
         }
 
+    }
+
+    /**
+     * Setup site frontpage
+     */
+    private static function setup_frontpage() {
+        global $SITE, $DB;
+        $DB->set_field('course','summary', self::FRONT_PAGE_SUMMARY, array('id'=> $SITE->id));
+        $DB->set_field('course','summaryformat', FORMAT_HTML, array('id'=> $SITE->id));
     }
 }
