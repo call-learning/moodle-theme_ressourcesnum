@@ -21,6 +21,9 @@
  * @copyright 2021 - CALL Learning - Laurent David <laurent@call-learning.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+use theme_ressourcesnum\setup;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -28,15 +31,10 @@ defined('MOODLE_INTERNAL') || die();
  *
  * @param int $oldversion the version we are upgrading from
  * @return void
- * @throws ddl_exception
- * @throws ddl_table_missing_exception
- * @throws downgrade_exception
- * @throws upgrade_exception
  */
 function xmldb_theme_ressourcesnum_upgrade($oldversion) {
-    if ($oldversion < 2021090901) {
-
-
-        upgrade_plugin_savepoint(true, 2021090901, 'theme', 'ressourcesnum');
+    if ($oldversion < 2021091401) {
+        setup::install_update();
+        upgrade_plugin_savepoint(true, 2021091401, 'theme', 'ressourcesnum');
     }
 }

@@ -36,6 +36,11 @@ defined('MOODLE_INTERNAL') || die;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class config extends \theme_clboost\local\config {
+    /**
+     * Get layout for this theme
+     *
+     * @return array[]
+     */
     public static function get_layouts() {
         $layouts = parent::get_layouts();
         $layouts[page_utils::PAGE_LAYOUT_NAME] = array(

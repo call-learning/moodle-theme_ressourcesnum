@@ -105,6 +105,9 @@ class utils {
         return \theme_clboost\local\utils::convert_from_config($configtext, $lineparser);
     }
 
+    /**
+     * Slider file area
+     */
     const SLIDER_FILEAREA = 'sliderimage';
 
     /**

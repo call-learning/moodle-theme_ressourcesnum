@@ -14,14 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Carousel renderable
- *
- * @package   theme_resourcenum
- * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 namespace theme_ressourcesnum\output;
 
 use renderable;
@@ -32,14 +24,36 @@ use theme_ressourcesnum\local\utils;
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Carousel renderable
+ *
+ * @package   theme_ressourcesnum
+ * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class carousel_renderable implements renderable, templatable {
 
+    /**
+     * @var string $themename
+     */
     protected $themename;
 
+    /**
+     * Constructor
+     *
+     * @param string $themename
+     */
     public function __construct($themename) {
         $this->themename = $themename;
     }
 
+    /**
+     * Export for template
+     *
+     * @param renderer_base $output
+     * @return array
+     * @throws \dml_exception
+     */
     public function export_for_template(renderer_base $output) {
         $carousel = [];
         $slidersimageurl = utils::get_slider_images_url($this->themename);

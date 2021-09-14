@@ -15,22 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme plugin version definition.
+ * This file is executed right after the install.xml
+ *
  *
  * @package   theme_ressourcesnum
- * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
+ * @copyright 2021 - CALL Learning - Laurent David <laurent@call-learning.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+use theme_ressourcesnum\setup;
 
-$plugin->version   = 2021091401; /* This is the version number to increment when changes needing an update are made */
-$plugin->requires  = 2019111800;
-$plugin->release   = '0.1.0';
-$plugin->maturity  = MATURITY_ALPHA;
-$plugin->component = 'theme_ressourcesnum';
-$plugin->dependencies = [
-    'theme_boost' => ANY_VERSION,
-    'theme_clboost' => '2020092300',
-    'local_mcms' => ANY_VERSION
-];
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Theme install
+ */
+function xmldb_theme_ressourcesnum_install() {
+    setup::install_update();
+}

@@ -1,8 +1,10 @@
 // General layout settings
+// Override for theme.
+$dropdown-link-hover-color: white;
+$dropdown-link-hover-bg: lighten($primary, 20%);
+
 @import "../../clboost/scss/commons";
 @import "../../clboost/scss/drawer";
-
-// Override for theme.
 
 
 #page-wrapper {

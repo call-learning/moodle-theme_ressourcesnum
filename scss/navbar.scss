@@ -24,7 +24,7 @@
     font-variant: all-small-caps;
     font-family: $headings-font-family;
     font-weight: bold;
-    font-size: x-large;
+    font-size: xx-large;
 
     strong {
         color: $primary;
@@ -60,4 +60,12 @@
 
 .navbar {
     box-shadow: none;
+
+    a {
+        font-family: $headings-font-family;
+        font-weight: bold;
+        font-size: x-large;
+        font-variant: all-petite-caps;
+    }
+
 }

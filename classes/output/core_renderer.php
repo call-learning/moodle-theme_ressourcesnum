@@ -17,7 +17,7 @@
 /**
  * Core renderer
  *
- * @package   theme_resourcenum
+ * @package   theme_ressourcesnum
  * @copyright 2020 - CALL Learning - Laurent David <laurent@call-learning>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -48,6 +48,13 @@ class core_renderer extends \theme_clboost\output\core_renderer {
         return $this->get_logo_url($maxwidth, $maxheight); // No compact logo here.
     }
 
+    /**
+     * Get template additional informaiton
+     *
+     * @return \stdClass
+     * @throws \coding_exception
+     * @throws \dml_exception
+     */
     public function get_template_additional_information() {
         global $SITE, $CFG;
         $additionalinfo = parent::get_template_additional_information();
@@ -59,8 +66,11 @@ class core_renderer extends \theme_clboost\output\core_renderer {
         return $additionalinfo;
     }
 
-    // Menus.
-
+    /**
+     * Menu
+     *
+     * @return mixed
+     */
     public function mcms_menu() {
         $renderer = $this->page->get_renderer('local_mcms', 'menu');
         return $renderer->mcms_menu();

@@ -121,5 +121,8 @@ class settings extends \theme_clboost\local\settings {
         $settings->add($page);
     }
 
+    /**
+     * Max slides for slider
+     */
     const MAX_SLIDER_SLIDES = 10;
 }

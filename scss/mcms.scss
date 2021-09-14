@@ -11,6 +11,9 @@
     position: relative;
     @include page-standard-style();
     @include button-heading-style();
+    h3 {
+        text-align: left;
+    }
 }
 
 // Block decoration
