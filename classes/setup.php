@@ -136,7 +136,7 @@ class setup {
                 'user',
                 'frontpage'
             ],
-            'image' => '/theme/ressourcesnum/pix/pages/iceberg.jpg',
+            'image' => 'theme/ressourcesnum/pix/pages/iceberg.jpg',
             'blocks' => [
                 [
                     'blockname' => 'html',
@@ -214,7 +214,7 @@ class setup {
                 'guest',
                 'user'
             ],
-            'image' => '/theme/ressourcesnum/pix/pages/generic.jpg',
+            'image' => 'theme/ressourcesnum/pix/pages/generic.jpg',
             'blocks' => [
                 self::IDENTIFIER_COMPETENCES
             ]
@@ -234,7 +234,7 @@ class setup {
                 'guest',
                 'user'
             ],
-            'image' => '/theme/ressourcesnum/pix/pages/testez-vous.jpg',
+            'image' => 'theme/ressourcesnum/pix/pages/testez-vous.jpg',
             'blocks' => [
                 [
                     'blockname' => 'html',
@@ -271,7 +271,7 @@ class setup {
                 'guest',
                 'user'
             ],
-            'image' => '/theme/ressourcesnum/pix/pages/testez-vous.jpg',
+            'image' => 'theme/ressourcesnum/pix/pages/testez-vous.jpg',
             'blocks' => [
                 [
                     'blockname' => 'html',
@@ -309,7 +309,7 @@ class setup {
                 'guest',
                 'user'
             ],
-            'image' => '/theme/ressourcesnum/pix/pages/testez-vous.jpg',
+            'image' => 'theme/ressourcesnum/pix/pages/testez-vous.jpg',
             'blocks' => [
                 [
                     'blockname' => 'html',
@@ -408,7 +408,7 @@ class setup {
     de badges numériques.<br></p>
 <p dir="ltr" style="text-align: left;"><a href="/">En savoir plus</a></p>',
             'imageoverlaycolor' => '#fff',
-            'image' => '/theme/ressourcesnum/pix/slider/slider1.jpg',
+            'image' => 'theme/ressourcesnum/pix/slider/slider1.jpg',
         ),
         array(
             'text' => '<h3 style="text-align: left;">Ingénieurs : vous connaissez-vous vraiment ?</h3>
@@ -417,7 +417,7 @@ class setup {
 <a href="/">En savoir plus</a><br>',
             'imageoverlaycolor' => '#000',
             'slidercontentright' => true,
-            'image' => '/theme/ressourcesnum/pix/slider/slider2.jpg',
+            'image' => 'theme/ressourcesnum/pix/slider/slider2.jpg',
         ),
         array(
             'text' => '<h3 style="text-align: left;">Bac + 1</h3>
@@ -426,7 +426,7 @@ class setup {
 <a href="/">Testez vos compétences transverses</a><br>
 <a href="/">Testez vos compétences informationelles</a><br>',
             'imageoverlaycolor' => '#fff',
-            'image' => '/theme/ressourcesnum/pix/slider/slider3.jpg',
+            'image' => 'theme/ressourcesnum/pix/slider/slider3.jpg',
         ),
         array(
             'text' => '<h3 style="text-align: left;">Bachelor</h3>
@@ -436,7 +436,7 @@ class setup {
 <a href="/">Testez vos compétences informationelles</a><br>',
             'imageoverlaycolor' => '#000223',
             'slidercontentright' => true,
-            'image' => '/theme/ressourcesnum/pix/slider/slider4.jpg',
+            'image' => 'theme/ressourcesnum/pix/slider/slider4.jpg',
         ),
     );
 
@@ -530,7 +530,7 @@ class setup {
             $fs->delete_area_files($context->id, page_utils::PLUGIN_FILE_COMPONENT, page_utils::PLUGIN_FILE_AREA_IMAGE,
                 $existingpageid);
             setup_utils::upload_file($context->id, page_utils::PLUGIN_FILE_COMPONENT, page_utils::PLUGIN_FILE_AREA_IMAGE,
-                $existingpageid, $CFG->dirroot . dirname($imagepath), $filename);
+                $existingpageid, $imagepath, $filename);
             // Finally the blocks.
 
             // Setup Home page.
@@ -558,7 +558,7 @@ class setup {
 
             $fs->delete_area_files($frontpagecontext->id, 'theme_ressourcesnum', utils::SLIDER_FILEAREA, $realindex);
             setup_utils::upload_file($frontpagecontext->id, 'theme_ressourcesnum', utils::SLIDER_FILEAREA, $realindex,
-                $CFG->dirroot . dirname($slider['image']), basename($slider['image']));
+                $slider['image'], basename($slider['image']));
         }
 
     }
