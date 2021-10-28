@@ -193,7 +193,7 @@ class setup {
                     'configdata' => [
                         'text' => '<p dir="ltr" style="text-align: left;">Une fois le questionnaire fini, des propositions de
  ressources s’affichent. Celles-ci vous permettront d\'en savoir plus sur les éléments à approfondir.<br></p>',
-                        'title' => 'Comment les ameliorer ?',
+                        'title' => 'Comment les améliorer ?',
                         'classes' => 'ressourcesnum-text-container',
                         'format' => '1',
                     ]
@@ -203,7 +203,7 @@ class setup {
         [
             'title' => 'Testez vous',
             'shortname' => 'Testez vous',
-            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout&nbsp; pour son avenir</h3><br>',
+            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout pour son avenir</h3><br>',
             'descriptionformat' => '1',
             'idnumber' => 'testez-vous',
             'ctalink' => '',
@@ -222,7 +222,7 @@ class setup {
         [
             'title' => 'BAC+1 - Competences Informationnelles',
             'shortname' => 'BAC+1',
-            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout&nbsp; pour son avenir</h3><br>',
+            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout pour son avenir</h3><br>',
             'descriptionformat' => '1',
             'idnumber' => 'test-bac-1',
             'parent' => 'testez-vous',
@@ -259,7 +259,7 @@ class setup {
         [
             'title' => 'Bachelor (Bac + 3) - Competences Informationnelles',
             'shortname' => 'BACHELOR',
-            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout&nbsp; pour son avenir</h3><br>',
+            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout pour son avenir</h3><br>',
             'descriptionformat' => '1',
             'idnumber' => 'test-bachelor',
             'parent' => 'testez-vous',
@@ -296,8 +296,8 @@ class setup {
         ],
         [
             'title' => 'Elèves Ingénieurs - Competences Informationnelles',
-            'shortname' => 'Eleves Ingénieurs',
-            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout&nbsp; pour son avenir</h3><br>',
+            'shortname' => 'Elèves Ingénieurs',
+            'description' => '<p dir="ltr" style="text-align:left;"></p><h3>Un atout pour son avenir</h3><br>',
             'descriptionformat' => '1',
             'idnumber' => 'test-eleve-ingenieurs',
             'parent' => 'testez-vous',
@@ -362,7 +362,7 @@ class setup {
   de notre aspirateur,
     manipuler des applications informatiques pour communiquer avec nos amis… L’apprentissage est une activité essentielle
      de notre vie quotidienne.&nbsp;<br></p>
-<h4>Un atout&nbsp; pour son avenir</h4>
+<h4>Un atout pour son avenir</h4>
 <p>HESAM Université souhaite vous aider à renforcer vos compétences d’autoformation en créant des ponts entre vos compétences
  d’autoformation acquises dans le cadre de votre vie quotidienne et votre cursus de formation. L’articulation de
   ces deux dynamiques, formation formelle et autoformation vous aidera à devenir plus efficace dans

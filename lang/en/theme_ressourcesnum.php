@@ -46,7 +46,7 @@ $string['mesri'] = 'Ministère de l\'Enseignement supérieur, de la Recherche et
 $string['republiquefrancaise'] = 'République Française';
 $string['cookiesrgpd'] = 'Gestion des cookies et des données';
 $string['mentionlegales'] = 'Mentions légales';
-$string['copyright'] = '© HESAM  2020';
+$string['copyright'] = '© HESAM  2021';
 
 $string['region-side-pre'] = 'Right';
 $string['region-content'] = 'Content';

@@ -49,11 +49,6 @@
             }
             @extend .container;
 
-
-            a {
-                text-decoration: underline;
-            }
-
             h5 a {
                 @extend .btn;
                 @extend .btn-primary;
