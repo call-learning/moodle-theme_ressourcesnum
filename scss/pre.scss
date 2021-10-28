@@ -113,13 +113,13 @@ $navbar-height: 93px;
 }
 
 @mixin button-content-style() {
-    a {
+    .content a {
         @extend .btn;
         @include button-outline-variant($primary);
         text-align: center;
         margin-top: 1rem;
     }
-    a.highlight {
+    .content a.highlight {
         @include button-variant($primary, $primary);
     }
 }

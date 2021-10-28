@@ -146,7 +146,7 @@ class setup {
                     'configdata' => [
                         'text' => '<p dir="ltr" style="text-align: left;">Cette dénomination permet de mettre en lumière les
  compétences complémentaires aux compétences considérées comme « techniques », objectives et mesurables, propres à un métier.
-  Souvent, l’ensemble de compétences transverses contemplent les dimensions interpersonnelles et sociales nécessaires à
+  Souvent, l’ensemble de compétences transverses reflètent les dimensions interpersonnelles et sociales nécessaires à
    l’activité professionnelle. Elles s’acquièrent dans des contextes professionnels mais aussi personnels et informels.
     Ces compétences prennent leur sens dans le cadre d’un métier et en référence à des situations
      professionnelles concrètes.<br></p>',
@@ -192,7 +192,7 @@ class setup {
                     'defaultweight' => '5',
                     'configdata' => [
                         'text' => '<p dir="ltr" style="text-align: left;">Une fois le questionnaire fini, des propositions de
- ressources s’affichent. Celles-ci vous permettront de savoir plus sur les éléments à approfondir.<br></p>',
+ ressources s’affichent. Celles-ci vous permettront d\'en savoir plus sur les éléments à approfondir.<br></p>',
                         'title' => 'Comment les ameliorer ?',
                         'classes' => 'ressourcesnum-text-container',
                         'format' => '1',
@@ -322,7 +322,7 @@ class setup {
   d’évaluer votre niveau actuel d’acquisition. Les questionnaires mis à disposition par HESAM Université vous accompagnent
    tout au long de votre parcours, selon votre niveau et à votre rythme. Ces questionnaires prennent environ 10 minutes.
    <br></p><h4>Ingénieurs et élèves ingénieurs</h4><p>Pour ceux et celles qui se préparent au métier d’ingénieur, ces
-    ressources spécifiques complémentent votre formation technique.<br></p><p></p><p class="text-center">
+    ressources spécifiques complètent votre formation technique.<br></p><p></p><p class="text-center">
     <a href="http://soka-hesam.local/">Test sur les compétences transverses</a></p><p class="text-center">
     <a href="http://soka-hesam.local/">Test sur les compétences informationnelles</a></p><br><br><p></p><br><p></p>',
                         'title' => 'Comment identifier les compétences transverses ?',
