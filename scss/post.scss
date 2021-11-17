@@ -30,6 +30,9 @@ $dropdown-link-hover-bg: lighten($primary, 20%);
     }
 }
 
+.login-logo-image {
+    max-width: 350px;
+}
 #page {
     margin-top: $navbar-height;
 }
