@@ -1,8 +1,6 @@
 @font-face {
     font-family: 'HKGrotesk';
-    src: url([[font:theme|HKGrotesk-Regular.eot]]);
-    src: url([[font:theme|HKGrotesk-Regular.eot]]) format('embedded-opentype'),
-        url([[font:theme|HKGrotesk-Regular.otf]])  format('truetype'),
+    src: url([[font:theme|HKGrotesk-Regular.otf]])  format('truetype'),
         url([[font:theme|HKGrotesk-Regular.woff]]) format('woff'),
         url([[font:theme|HKGrotesk-Regular.woff2]]) format('woff2');
     font-weight: normal;
@@ -11,20 +9,15 @@
 
 @font-face {
     font-family: 'HKGrotesk';
-    src: url([[font:theme|HKGrotesk-Bold.eot]]);
-    src: url([[font:theme|HKGrotesk-Bold.eot]]) format('embedded-opentype'),
-    url([[font:theme|HKGrotesk-Bold.otf]])  format('truetype'),
+    src: url([[font:theme|HKGrotesk-Bold.otf]])  format('truetype'),
     url([[font:theme|HKGrotesk-Bold.woff]]) format('woff'),
     url([[font:theme|HKGrotesk-Bold.woff2]]) format('woff2');
     font-weight: bold;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'HKGrotesk';
-    src: url([[font:theme|HKGrotesk-Italic.eot]]);
-    src: url([[font:theme|HKGrotesk-Italic.eot]]) format('embedded-opentype'),
-    url([[font:theme|HKGrotesk-Italic.otf]])  format('truetype'),
+    src: url([[font:theme|HKGrotesk-Italic.otf]])  format('truetype'),
     url([[font:theme|HKGrotesk-Italic.woff]]) format('woff'),
     url([[font:theme|HKGrotesk-Italic.woff2]]) format('woff2');    font-weight: normal;
     font-style: italic;
@@ -49,7 +42,6 @@
     url([[font:theme|GandhiSans-Bold.woff]]) format('woff'),
     url([[font:theme|GandhiSans-Bold.woff2]]) format('woff2');
     font-weight: bold;
-    font-style: normal;
 }
 
 @font-face {

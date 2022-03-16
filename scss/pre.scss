@@ -84,19 +84,33 @@ $navbar-height: 93px;
 
 // Mixins
 
-@mixin page-standard-style() {
+@mixin page-standard-style($header-font-style) {
     font-family: $font-family-sans-serif;
     hr {
-        width: 2rem;
-        border-top: 2.5px solid $primary;
+        width: 3rem;
+        border-top: 3.5px solid #f3002c;
     }
     h3 {
-        font-family: $font-family-sans-serif;
-        font-weight: bold;
+        font-family: $header-font-style;
+        font-weight: normal;
         text-align: center;
         font-size: xx-large;
         padding-top: 1.5em;
         padding-bottom: 1.5em;
+    }
+    h4 {
+        margin-left: 1em;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+        &::before {
+            content: "";
+            position: absolute;
+            border-top: 0.5em solid transparent;
+            border-bottom: 0.5em solid transparent;
+            border-left: 0.5em solid $primary;
+            width: 1em;
+            margin-left: -1em;
+        }
     }
 }
 

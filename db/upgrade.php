@@ -24,8 +24,6 @@
 
 use theme_ressourcesnum\setup;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Upgrade steps for this plugin
  *

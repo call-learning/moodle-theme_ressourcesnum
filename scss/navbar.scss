@@ -21,10 +21,9 @@
 }
 
 .site-name {
-    font-variant: all-small-caps;
     font-family: $headings-font-family;
     font-weight: bold;
-    font-size: xx-large;
+    font-size: x-large;
 
     strong {
         color: $primary;
@@ -60,16 +59,11 @@
 
 .navbar {
     box-shadow: none;
-    a {
-        font-family: $font-family-sans-serif;
-        font-weight: normal;
-        font-variant: all-small-caps;
-        font-size: large;
-    }
-    a.nav-item {
-        font-size: x-large;
-    }
-    a.dropdown-toggle {
-        font-size: x-large;
+    font-size: large; // This is a hack: HK Grotesk has issue with relative font size.
+    a, a.nav-item, a.dropdown-toggle {
+        font-family: $headings-font-family;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: smaller; // This is a hack: HK Grotesk has issue with relative font size.
     }
 }

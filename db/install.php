@@ -24,8 +24,6 @@
  */
 use theme_ressourcesnum\task\setup_task;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Theme install
  */

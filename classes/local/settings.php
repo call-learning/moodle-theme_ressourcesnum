@@ -28,8 +28,6 @@ use admin_setting_configcolourpicker;
 use admin_setting_configstoredfile;
 use admin_settingpage;
 
-defined('MOODLE_INTERNAL') || die;
-
 /**
  * Theme settings. In one place.
  *

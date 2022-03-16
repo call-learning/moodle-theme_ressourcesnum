@@ -25,9 +25,6 @@
 namespace theme_ressourcesnum\local;
 
 use local_mcms\page_utils;
-
-defined('MOODLE_INTERNAL') || die;
-
 /**
  * Theme constants. In one place.
  *

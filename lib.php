@@ -24,8 +24,6 @@
 
 use theme_ressourcesnum\local\utils;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Serves any files associated with the theme settings.
  *

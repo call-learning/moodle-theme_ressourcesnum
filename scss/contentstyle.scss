@@ -1,6 +1,6 @@
 #page-site-index,
 .ressourcesnum-text-container {
-    @include page-standard-style();
+    @include page-standard-style($font-family-sans-serif);
     @include button-content-style();
 }
 

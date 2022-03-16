@@ -26,8 +26,6 @@ namespace theme_ressourcesnum\output;
 
 use theme_ressourcesnum\local\utils;
 
-defined('MOODLE_INTERNAL') || die;
-
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *

@@ -22,9 +22,6 @@ use local_mcms\page_role;
 use local_mcms\page_utils;
 use theme_clboost\setup_utils;
 use theme_ressourcesnum\local\utils;
-
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Class setup
  *

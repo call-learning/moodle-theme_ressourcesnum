@@ -18,7 +18,6 @@ namespace theme_ressourcesnum\task;
 
 use theme_ressourcesnum\setup;
 
-defined('MOODLE_INTERNAL') || die();
 /**
  * Class setup task
  *

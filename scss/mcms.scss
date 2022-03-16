@@ -9,7 +9,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    @include page-standard-style();
+    @include page-standard-style($headings-font-family);
     @include button-heading-style();
     h3 {
         text-align: left;

@@ -27,8 +27,6 @@ namespace theme_ressourcesnum\local;
 use context_system;
 use moodle_url;
 
-defined('MOODLE_INTERNAL') || die;
-
 /**
  * Theme constants. In one place.
  *

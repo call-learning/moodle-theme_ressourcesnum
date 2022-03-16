@@ -3,7 +3,7 @@ About the fonts
 
 All fonts here are taken from :
 
-    * https://www.fontsquirrel.com/fonts/hk-grotesk
+    * https://www.fontsquirrel.com/fonts/hk-grotesk / https://hanken.co/collections/free
     * https://www.fontsquirrel.com/fonts/gandhi-sans
     
 HK Grostek is licensed under the SIL Open Font License, Version 1.1.

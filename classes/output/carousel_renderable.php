@@ -22,8 +22,6 @@ use stdClass;
 use templatable;
 use theme_ressourcesnum\local\utils;
 
-defined('MOODLE_INTERNAL') || die;
-
 /**
  * Carousel renderable
  *
